@@ -1,0 +1,29 @@
+{
+  "name": "nodeplays",
+  "version": "1.1.0",
+  "description": "Node application for Twitch Plays.",
+  "main": "app.js",
+  "bin": "app.js",
+  "keywords": [
+    "twitch",
+    "twitch.tv",
+    "stream",
+    "broadcast",
+    "channel",
+    "chat",
+    "bot",
+    "tmi",
+    "websocket"
+  ],
+  "author": "iCrazyBlaze",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "python-shell": "^1.0.8",
+    "tmi.js": "^1.5.0",
+    "touch": "^3.1.0"
+  },
+  "os": ["win32"],
+  "files": [
+    "scripts"
+  ]
+}
