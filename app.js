@@ -27,7 +27,6 @@ var isAcceptingCommands = true;
 try {
   var configFile = fs.readFileSync(configPath);
   console.log("Configuration loaded!");
-
 } catch (error) {
   console.log(
     "Could not find configuration file. The file has now been created. Please edit it and re-run the program!"
@@ -55,7 +54,7 @@ var channel = configContent.channel;
 var prefix = configContent.prefix;
 
 const client = new tmi.Client({
-  options: { debug: true },
+  options: { debug: false },
   connection: {
     reconnect: true,
     secure: true
@@ -104,7 +103,7 @@ client.on("message", (channel, tags, message, self) => {
 
         var sentKey = sendKey(id_stripped, holdtime);
 
-        if (sentKey == true) {
+        if (sentKey) {
           // Display command
           console.log(tags["display-name"] + ": " + message);
         }
@@ -127,7 +126,7 @@ function parseTwitchCommand(cmd) {
   }
 
   if (cmd == "quitgame") {
-	// Quit function (Chocolate DOOM)
+    // Quit function (Chocolate DOOM)
 
     if (isAcceptingCommands) {
       parseTwitchCommand("togglelock");

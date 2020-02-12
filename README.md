@@ -12,3 +12,6 @@ The app currently doesn't work on Linux or Mac.
 
 ## Default keymap bindings
 The default bindings are made for Chocolate Doom, using WASD as the movement and turning controls.
+
+## Extra notes
+This app requires Python 3.x to run. The executable name used is `python`.
