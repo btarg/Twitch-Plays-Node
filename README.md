@@ -1,7 +1,7 @@
 # Twitch-Plays-Node
  An implementation of "Twitch Plays" written in Node.JS with special commands.
 
-Custom controls can be set up by editing the `names` section of `scripts/keycodes.json`. An example of a valid ID would be `DIK_ESCAPE:0`, meaning press `DIK_ESCAPE` for `0` seconds (don't hold the key down).
+Custom controls can be set up by editing the `names` section of `config/user.json` *moved here as of 1.2.0*. An example of a valid ID would be `DIK_ESCAPE:0`, meaning press `DIK_ESCAPE` for `0` seconds (don't hold the key down).
 
 ## Building
 Build for Windows using:

@@ -15,10 +15,31 @@ var keymapContent = require("./scripts/keycodes.json"); // Read with require so 
 var configPath = path.join(configFolder, "user.json");
 
 const defaultConfig = {
-  botname: "TwitchPlays",
-  channel: "icrazyblazelive",
-  key: "oauth:yourkeyhere",
-  prefix: "!"
+  config: {
+    botname: "TwitchPlays",
+    channel: "icrazyblazelive",
+    key: "oauth:yourkeyhere",
+    prefix: "!"
+  },
+  names: {
+    w: ["DIK_W:0.5"],
+    a: ["DIK_A:0.5"],
+    s: ["DIK_S:0.5"],
+    d: ["DIK_D:0.5"],
+    shoot: ["DIK_LCONTROL:0"],
+    use: ["DIK_SPACE:0"],
+    map: ["DIK_TAB:0"],
+    run: ["DIK_LSHIFT:2", "DIK_W:2"],
+    1: ["DIK_1:0"],
+    2: ["DIK_2:0"],
+    3: ["DIK_3:0"],
+    4: ["DIK_4:0"],
+    5: ["DIK_5:0"],
+    6: ["DIK_6:0"],
+    7: ["DIK_7:0"],
+    8: ["DIK_8:0"],
+    9: ["DIK_9:0"]
+}
 };
 
 var isAcceptingCommands = true;
@@ -81,8 +102,8 @@ client.on("message", (channel, tags, message, self) => {
 
   if (!isAcceptingCommands) return;
 
-  for (var id in keymapContent.names) {
-    var id_value = keymapContent.names[id];
+  for (var id in configContent.names) {
+    var id_value = configContent.names[id];
 
     if (message.toUpperCase() == id.toUpperCase()) {
       for (idv in id_value) {
